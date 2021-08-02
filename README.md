@@ -100,7 +100,7 @@ The installation steps are already written in main.py script. Think of installat
 As it was mentioned above, metrics are pretty high on the validation set. Here is the report:
 
 <a href="https://github.com/ReAlex1902/Innoscripta_task">
-  <img src="photos/metrics.png" alt="Logo" width="628" height="410">
+  <img src="photos/metrics_white.png" alt="Logo" width="628" height="410">
 </a>
 
 
