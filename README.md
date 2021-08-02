@@ -52,7 +52,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -109,17 +108,12 @@ The installation steps are already written in main.py script. Think of installat
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Download files from Prodution_code catalog. You will need requirements.txt to download, idf2tag.json for accurate predictions and main.py to be applied on the document
-2. Download [Hawk weights] (https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing)
-3. When main.py asks you, provide the path to Hawk weights
-4. Write down the text of the document
-5. Enjoy the result!
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
+1. Download files from Prodution_code catalog. You will need requirements.txt to download, idf2tag.json for accurate predictions and main.py to be applied on the document.
+2. Download [Hawk weights] (https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
+3. Run main.py script.
+4. When main.py asks you, provide the path to Hawk weights.
+5. Write down the text of the document.
+6. Enjoy the result!
 
 
 <!-- CONTRIBUTING -->
