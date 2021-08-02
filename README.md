@@ -88,7 +88,7 @@ The installation steps are already written in main.py script. Think of installat
 ## Usage
 
 1. Download files from Prodution_code catalog. You will need requirements.txt to download, idf2tag.json for accurate predictions and main.py to be applied on the document.
-2. Download [Hawk weights] (https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
+2. Download [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
 3. Run main.py script.
 4. When main.py asks you, provide the path to Hawk weights.
 5. Write down the text of the document.
