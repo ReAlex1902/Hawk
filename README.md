@@ -88,43 +88,32 @@ Hawk is created with the next technologies:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+In order to make Hawk work well you need to install all necessary prerequisites
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Prerequisites are described in Production_code/requirements.txt. All you need is to run the next command \
+The installation steps are already written in main.py script. Think of installation step if you're going to use Hawk outside of the script
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-
+1. Download all necessary libraries with the next command:
+  ```sh
+  pip install -r requirements.txt
+  ```
+2. Download German spaCy large pipeline:
+  ```sh
+  python -m spacy download de_core_news_lg
+  ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
+1. Download files from Prodution_code catalog. You will need requirements.txt to download, idf2tag.json for accurate predictions and main.py to be applied on the document
+2. Download [Hawk weights] (https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing)
+3. When main.py asks you, provide the path to Hawk weights
+4. Write down the text of the document
+5. Enjoy the result!
 
 <!-- ROADMAP -->
 ## Roadmap
