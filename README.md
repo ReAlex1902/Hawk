@@ -52,9 +52,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#metrics">Metrics</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -113,6 +113,9 @@ The installation steps are already written in main.py script. Think of installat
 4. When main.py asks you, provide the path to Hawk weights.
 5. Write down the text of the document.
 6. Enjoy the result!
+
+
+## Metrics
 
 
 
