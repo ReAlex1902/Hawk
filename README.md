@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/ReAlex1902/Innoscripta_task/blob/main/photos/hawk_logo.png">
     <img src="" alt="Logo" width="80" height="80">
   </a>
 
