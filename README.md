@@ -136,5 +136,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Alex Malkhasov
 
-E-mail: ReAlex1902@gmail.com
-[Telegram](https://t.me/ReAlex1902) [LinkedIn](https://www.linkedin.com/in/alex-malkhasov/)
+E-mail: ReAlex1902@gmail.com \
+[Telegram](https://t.me/ReAlex1902) \
+[LinkedIn](https://www.linkedin.com/in/alex-malkhasov/)
