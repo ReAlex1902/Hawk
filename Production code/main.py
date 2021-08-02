@@ -59,6 +59,7 @@ def predict(text, model = model, tokenizer = tokenizer):
     for token, label in zip(new_tokens, new_labels):
         print("{}\t\t\t{}".format(label, token))
 
-while True:
-    text = input('Write down your text: ')
-    predict(text)
+if __name__ == '__main__':
+    while True:
+        text = input('Write down your text: ')
+        predict(text)
