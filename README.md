@@ -12,8 +12,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/ReAlex1902/Innoscripta_task/blob/main/photos/hawk_logo.png">
-    <img src="" alt="Logo" width="80" height="80">
+  <a href="https://github.com/ReAlex1902/Innoscripta_task">
+    <img src="photos/hawk_logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Hawk</h3>
