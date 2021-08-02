@@ -13,7 +13,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ReAlex1902/Innoscripta_task">
-    <img src="photos/hawk_logo.png" alt="Logo" width="80" height="80">
+    <img src="photos/hawk_logo.png" alt="Logo" width="160" height="160">
   </a>
 
   <h3 align="center">Hawk</h3>
@@ -120,7 +120,7 @@ The installation steps are already written in main.py script. Think of installat
 As it was mentioned above, metrics are pretty high on the validation set. Here is the report:
 
 <a href="https://github.com/ReAlex1902/Innoscripta_task">
-  <img src="photos/metrics.png" alt="Logo" width="80" height="80">
+  <img src="photos/metrics.png" alt="Logo" width="1900" height="1900">
 </a>
 
 
