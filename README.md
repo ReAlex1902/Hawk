@@ -72,7 +72,11 @@ Prerequisites are described in [src/requirements](https://github.com/ReAlex1902/
 
 ### Installation
 
-1. Download all necessary libraries with the next command:
+1. Clone github repository
+```sh
+git clone https://github.com/ReAlex1902/Hawk.git
+```
+3. Download all necessary libraries with the next command:
   ```sh
   pip install -r requirements.txt
   ```
