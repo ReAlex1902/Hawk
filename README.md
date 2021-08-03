@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ReAlex1902/Hawk">
-    <img src="photos/hawk_logo.png" alt="Logo" width="160" height="160">
+    <img src="photos/hawk=logo.png" alt="Logo" width="160" height="160">
   </a>
 
   <h3 align="center">Hawk</h3>
@@ -78,6 +78,8 @@ You can find all steps in data analysis and modeling at [analysis/Hawk.ipynb](ht
 2. train_model() function trains the model and return the history of loss function values. Here I used AdamW optimizer. eval_model() runs the model on the validation dataset and returns accuracy score, f1 score and classification report.
 3. predict() prints the given sentence and highlights important information. The function in [src/predict.py] is modified for everyday usage.
 
+<img src="photos/sentence-example.png" width="407" height="636">
+
 
 
 <!-- GETTING STARTED -->
@@ -119,7 +121,7 @@ git clone https://github.com/ReAlex1902/Hawk.git
 
 As it was mentioned above, metrics are high on the validation set. Here is the report:
 
-<img src="photos/sentence-example.png" width="628" height="410">
+<img src="photos/metrics-white.png" width="628" height="410">
 
 
 <!-- LICENSE -->
