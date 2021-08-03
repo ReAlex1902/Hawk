@@ -4,7 +4,7 @@ if TYPE_CHECKING:
     from transformers.modeling_outputs import TokenClassifierOutput
     import torch
 
-def predict(text, model = model, tokenizer = tokenizer):
+def predict(text, model, tokenizer):
     '''
     Function for token classification.
 
