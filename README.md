@@ -43,7 +43,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Hawk project is supposed to help Innoscripta GmbH to work with the database in monitoring and scrapping necessary information about its counterparties.
+Hawk project is supposed to help [Innoscripta GmbH](https://www.innoscripta.com/) to work with the database in monitoring and scrapping necessary information about its counterparties.
 
 Here are main reasons to use this decision:
 * Hawk analyzes hundreds of documents for few minutes and highlights important information
