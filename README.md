@@ -68,7 +68,7 @@ In order to make Hawk work well you need to install all necessary prerequisites
 
 ### Prerequisites
 
-Prerequisites are described in [src/requirements].(https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt). All you need is to follow the installation step.
+Prerequisites are described in [src/requirements](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt). All you need is to follow the installation step.
 
 ### Installation
 
