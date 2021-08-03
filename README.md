@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/ReAlex1902/Innoscripta_task">
+  <a href="https://github.com/ReAlex1902/Hawk">
     <img src="photos/hawk_logo.png" alt="Logo" width="160" height="160">
   </a>
 
@@ -68,11 +68,11 @@ In order to make Hawk work well you need to install all necessary prerequisites
 
 ### Prerequisites
 
-Prerequisites are described in [src/requirements](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt). All you need is to follow the installation step.
+Prerequisites are described in [src/requirements.txt](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt). All you need is to follow the installation step.
 
 ### Installation
 
-1. Clone github repository
+1. Clone Hawk github repository:
 ```sh
 git clone https://github.com/ReAlex1902/Hawk.git
 ```
@@ -88,10 +88,10 @@ git clone https://github.com/ReAlex1902/Hawk.git
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Download files from [src](https://github.com/ReAlex1902/Hawk/tree/main/src) catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/idx2tag.json) for accurate predictions and main.py to be applied on the document.
+1. Download files from [src](https://github.com/ReAlex1902/Hawk/tree/main/src) catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Hawk/blob/main/src/idx2tag.json) for accurate predictions and main.py to be applied on the document.
 2. Download [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-3. Run [main.py](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/main.py) script.
-4. When [main.py](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
+3. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
+4. When [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
 5. Write down the text of the document.
 6. Enjoy the result!
 
@@ -100,7 +100,7 @@ git clone https://github.com/ReAlex1902/Hawk.git
 
 As it was mentioned above, metrics are high on the validation set. Here is the report:
 
-<a href="https://github.com/ReAlex1902/Innoscripta_task">
+<a href="https://github.com/ReAlex1902/Hawk">
   <img src="photos/metrics_white.png" alt="Logo" width="628" height="410">
 </a>
 
