@@ -50,11 +50,11 @@ Here are main reasons to use this decision:
 * It is reliable according to the metrics on the validation dataset
 * The neural network will save great amount of money on the routine analysis of documents
 
-Of course, after some time Hawk will need to additioinal training. As it is applicable to every NN project, it needs new data to be kind of state-of-the-art decision for the company
+Of course, after some time Hawk will need the additioinal training. As it is applicable to every NN project, it needs new data to be kind of state-of-the-art decision for the company
 
 ### Built With
 
-Hawk is created with the next technologies:
+Hawk was created using the following technologies:
 * [PyTorch](https://pytorch.org)
 * [Hugging Face](https://huggingface.co/)
 * [spaCy](https://spacy.io/)
@@ -68,8 +68,8 @@ In order to make Hawk work well you need to install all necessary prerequisites
 
 ### Prerequisites
 
-Prerequisites are described in Production_code/requirements.txt. All you need is to run the next command \
-The installation steps are already written in main.py script. Think of installation step if you're going to use Hawk outside of the script
+Prerequisites are described in [Production_code/requirements.txt](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/requirements.txt). All you need is to run the next command \
+The installation steps are already written in [main.py](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/main.py) script. Think of installation step if you're going to use Hawk outside of the script
 
 ### Installation
 
@@ -85,17 +85,17 @@ The installation steps are already written in main.py script. Think of installat
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Download files from Prodution_code catalog. You will need requirements.txt to download, idf2tag.json for accurate predictions and main.py to be applied on the document.
+1. Download files from Prodution_code catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/idx2tag.json) for accurate predictions and main.py to be applied on the document.
 2. Download [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-3. Run main.py script.
-4. When main.py asks you, provide the path to Hawk weights.
+3. Run [main.py](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/main.py) script.
+4. When [main.py](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
 5. Write down the text of the document.
 6. Enjoy the result!
 
 
 ## Metrics
 
-As it was mentioned above, metrics are pretty high on the validation set. Here is the report:
+As it was mentioned above, metrics are high on the validation set. Here is the report:
 
 <a href="https://github.com/ReAlex1902/Innoscripta_task">
   <img src="photos/metrics_white.png" alt="Logo" width="628" height="410">
