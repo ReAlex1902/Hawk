@@ -43,8 +43,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Hawk project is supposed to help Innoscripta GmbH to work with the database in monitoring and scrapping necessary information about its counterparties.
 
 Here are main reasons to use this decision:
