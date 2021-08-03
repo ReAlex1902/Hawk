@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ReAlex1902/Hawk">
-    <img src="photos/hawk_logo.png" alt="Logo" width="160" height="160">
+    <img src="photos/hawk=logo.png" alt="Logo" width="160" height="160">
   </a>
 
   <h3 align="center">Hawk</h3>
