@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/ReAlex1902/Innoscripta_task">
+  <a href="https://github.com/ReAlex1902/Hawk">
     <img src="photos/hawk_logo.png" alt="Logo" width="160" height="160">
   </a>
 
@@ -24,6 +24,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#analysis">Analysis</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -60,6 +61,24 @@ Hawk was created using the following technologies:
 * [spaCy](https://spacy.io/)
 
 
+## Analysis
+You can find all steps in data analysis and modeling at [analysis/Hawk.ipynb](https://github.com/ReAlex1902/Hawk/blob/main/analysis/Hawk.ipynb)
+
+### Data preprocessing steps:
+1. [Large German Pipeline (de_core_news_lg)](https://spacy.io/models/de) is used for tagging texts.
+2. '\\n' is added to prefixes to be correctly analyzed in documents by the model.
+3. DataFrmae is transformed to two lists with get_sents_and_tags function (sentences and tags). The first list contains texts divided to sentences, second list consists of tags for each word in the sentence.
+4. tag2idx and idx2tag dictionaries are created once and used after training. They connect each tag to number, which will be predicted in the future. idx2tag.json is used in [src/predict.py](https://github.com/ReAlex1902/Hawk/blob/main/src/predict.py) to transform predicted number to tag.
+5. With Bert Tokenizer text is tokenized with labels to each piece of the word using BILUO method.
+6. Texts with labels are padded to a maximum length of 512 tokens.
+7. Train and Validation Tensor Datasets and DataLoaders are created for training the model.
+
+### Modeling steps:
+1. I used [BertForTokenClassification bert-base-german-cased](https://huggingface.co/bert-base-german-cased) pretrained model.
+2. train_model() function trains the model and return the history of loss function values. Here I used AdamW optimizer. eval_model() runs the model on the validation dataset and returns accuracy score, f1 score and classification report.
+3. predict() prints the given sentence and highlights important information. The function in [src/predict.py] is modified for everyday usage.
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -68,11 +87,15 @@ In order to make Hawk work well you need to install all necessary prerequisites
 
 ### Prerequisites
 
-Prerequisites are described in [src/requirements](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt). All you need is to follow the installation step.
+Prerequisites are described in [src/requirements.txt](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt). All you need is to follow the installation step.
 
 ### Installation
 
-1. Download all necessary libraries with the next command:
+1. Clone Hawk github repository:
+```sh
+git clone https://github.com/ReAlex1902/Hawk.git
+```
+3. Download all necessary libraries with the next command:
   ```sh
   pip install -r requirements.txt
   ```
@@ -84,10 +107,10 @@ Prerequisites are described in [src/requirements](https://github.com/ReAlex1902/
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Download files from [src](https://github.com/ReAlex1902/Hawk/tree/main/src) catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/idx2tag.json) for accurate predictions and main.py to be applied on the document.
+1. Download files from [src](https://github.com/ReAlex1902/Hawk/tree/main/src) catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Hawk/blob/main/src/idx2tag.json) for accurate predictions and main.py to be applied on the document.
 2. Download [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-3. Run [main.py](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/main.py) script.
-4. When [main.py](https://github.com/ReAlex1902/Innoscripta_task/blob/main/Production%20code/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
+3. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
+4. When [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
 5. Write down the text of the document.
 6. Enjoy the result!
 
@@ -96,9 +119,7 @@ Prerequisites are described in [src/requirements](https://github.com/ReAlex1902/
 
 As it was mentioned above, metrics are high on the validation set. Here is the report:
 
-<a href="https://github.com/ReAlex1902/Innoscripta_task">
-  <img src="photos/metrics_white.png" alt="Logo" width="628" height="410">
-</a>
+<img src="photos/sentence-example.png" width="628" height="410">
 
 
 <!-- LICENSE -->
