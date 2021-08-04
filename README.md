@@ -114,11 +114,9 @@ gdown --id 1_IWXvjsV3uU0D93loeVUuK_miA24dt8b --output src\HAWK_3.0.pth
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Download files from [src](https://github.com/ReAlex1902/Hawk/tree/main/src) catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Hawk/blob/main/src/idx2tag.json) for accurate predictions and main.py to be applied on the document.
-2. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
-3. When [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-4. Write down the text of the document.
-5. Enjoy the result!
+1. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
+2. Write down the text of the document.
+3. Enjoy the result!
 
 
 ## Metrics
