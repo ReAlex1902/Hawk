@@ -97,24 +97,28 @@ Prerequisites are described in [src/requirements.txt](https://github.com/ReAlex1
 ```sh
 git clone https://github.com/ReAlex1902/Hawk.git
 ```
-3. Download all necessary libraries with the next command:
+2. Go to Hawk repository and download all necessary libraries with the next command:
   ```sh
-  pip install -r requirements.txt
+  cd Hawk
+  pip install -r src\requirements.txt
   ```
-2. Download German spaCy large pipeline:
+3. Download German spaCy large pipeline:
   ```sh
   python -m spacy download de_core_news_lg
   ```
+4. Download HAWK model:
+```sh
+gdown --id 1_IWXvjsV3uU0D93loeVUuK_miA24dt8b --output src\HAWK_3.0.pth
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 1. Download files from [src](https://github.com/ReAlex1902/Hawk/tree/main/src) catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Hawk/blob/main/src/idx2tag.json) for accurate predictions and main.py to be applied on the document.
-2. Download [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-3. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
-4. When [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-5. Write down the text of the document.
-6. Enjoy the result!
+2. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
+3. When [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
+4. Write down the text of the document.
+5. Enjoy the result!
 
 
 ## Metrics
