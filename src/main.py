@@ -5,11 +5,16 @@ import numpy as np
 import pandas as pd
 import json
 import torch
-import torch.nn.functional as F
-from transformers import BertTokenizer, BertForTokenClassification
+from transformers import BertTokenizer, BertForTokenClassification, logging
 import spacy
+logging.set_verbosity_error()
 
 from predict import predict
+from typing import TYPE_CHECKING, Union
+
+if TYPE_CHECKING:
+    from transformers.models.bert.tokenization_bert import BertTokenizer
+    from transformers.models.bert.modeling_bert import BertForTokenClassification
 
 def main():
     nlp = spacy.load("de_core_news_lg")
@@ -24,17 +29,16 @@ def main():
     tag2idx = {idx2tag_str[key]: int(key) for key in idx2tag_str.keys()}
     idx2tag = {int(key): idx2tag_str[key] for key in idx2tag_str.keys()}
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device: 'torch.device' = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    tokenizer = BertTokenizer.from_pretrained('bert-base-german-cased', do_lower_case = False)
-    model = BertForTokenClassification.from_pretrained("bert-base-german-cased", num_labels = len(tag2idx))
-    model.to(device)
+    tokenizer: 'BertTokenizer' = BertTokenizer.from_pretrained('bert-base-german-cased', do_lower_case = False)
+    model: 'BertForTokenClassification' = BertForTokenClassification.from_pretrained('bert-base-german-cased', num_labels = len(tag2idx))
+    model: 'BertForTokenClassification' = model.to(device)
 
     path_to_model = os.path.join(sys.path[0], 'HAWK_3.0.pth')
     model.load_state_dict(torch.load(path_to_model, map_location = device))
 
     while True:
-        print(type(model), type(tokenizer), type(device), type(idx2tag))
         text = input('Write down your text: ')
         tokens, labels = predict(text, model, tokenizer, device, idx2tag)
         for token, label in zip(tokens, labels):
