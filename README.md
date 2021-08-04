@@ -100,7 +100,7 @@ git clone https://github.com/ReAlex1902/Hawk.git
 2. Go to Hawk repository and download all necessary libraries with the next command:
   ```sh
   cd Hawk
-  pip install -r src\requirements.txt
+  python -m pip install -r src\requirements.txt
   ```
 3. Download German spaCy large pipeline:
   ```sh
