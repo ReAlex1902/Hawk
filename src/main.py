@@ -1,3 +1,6 @@
+import os
+import sys
+
 import numpy as np
 import pandas as pd
 import json
@@ -15,7 +18,7 @@ def main():
     prefix_regex = spacy.util.compile_prefix_regex(prefixes)
     nlp.tokenizer.prefix_search = prefix_regex.search
 
-    with open('idx2tag.json') as json_file:
+    with open(os.path.join(sys.path[0], "idx2tag.json"), "r") as json_file:
         idx2tag_str = json.load(json_file)
 
     tag2idx = {idx2tag_str[key]: int(key) for key in idx2tag_str.keys()}
@@ -27,10 +30,11 @@ def main():
     model = BertForTokenClassification.from_pretrained("bert-base-german-cased", num_labels = len(tag2idx))
     model.to(device)
 
-    PATH_TO_MODEL = input('Write the path to the pretrained BERT model: ')
-    model.load_state_dict(torch.load(PATH_TO_MODEL, map_location = device))
+    path_to_model = os.path.join(sys.path[0], 'HAWK_3.0.pth')
+    model.load_state_dict(torch.load(path_to_model, map_location = device))
 
     while True:
+        print(type(model), type(tokenizer), type(device), type(idx2tag))
         text = input('Write down your text: ')
         tokens, labels = predict(text, model, tokenizer, device, idx2tag)
         for token, label in zip(tokens, labels):

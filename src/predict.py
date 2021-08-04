@@ -1,11 +1,14 @@
-# from typing import TYPE_CHECKING
-
-# if TYPE_CHECKING:
-from transformers.modeling_outputs import TokenClassifierOutput
+from typing import TYPE_CHECKING
 import torch
 import numpy as np
 
-def predict(text, model, tokenizer, device, idx2tag):
+## gdown 3.13.0
+# 
+
+if TYPE_CHECKING:
+    from transformers.modeling_outputs import TokenClassifierOutput
+
+def predict(text: str, model, tokenizer, device, idx2tag, include_ = False):
     '''
     Function for token classification.
 
@@ -13,6 +16,8 @@ def predict(text, model, tokenizer, device, idx2tag):
         model, bert model - model to apply for a text
         tokenizer, bert tokenizer - tokenizer for sentence encoding
     '''
+    ## TODO: 1) список списков для токенов и лейблов
+    ##       2) включить include_
 
     sentence = tokenizer.encode(text, add_special_tokens = False)
     sentence = torch.tensor([sentence]).to(device)
