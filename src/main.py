@@ -32,7 +32,7 @@ def main():
 
     while True:
         text = input('Write down your text: ')
-        tokens, labels = predict(text, model, tokenizer)
+        tokens, labels = predict(text, model, tokenizer, device, idx2tag)
         for token, label in zip(tokens, labels):
             print("{}\t\t\t{}".format(label, token))
 

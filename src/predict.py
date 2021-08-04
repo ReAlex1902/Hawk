@@ -3,8 +3,9 @@
 # if TYPE_CHECKING:
 from transformers.modeling_outputs import TokenClassifierOutput
 import torch
+import numpy as np
 
-def predict(text, model, tokenizer):
+def predict(text, model, tokenizer, device, idx2tag):
     '''
     Function for token classification.
 
@@ -12,6 +13,7 @@ def predict(text, model, tokenizer):
         model, bert model - model to apply for a text
         tokenizer, bert tokenizer - tokenizer for sentence encoding
     '''
+
     sentence = tokenizer.encode(text, add_special_tokens = False)
     sentence = torch.tensor([sentence]).to(device)
 
