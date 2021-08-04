@@ -1,8 +1,8 @@
-from typing import TYPE_CHECKING
+# from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from transformers.modeling_outputs import TokenClassifierOutput
-    import torch
+# if TYPE_CHECKING:
+from transformers.modeling_outputs import TokenClassifierOutput
+import torch
 
 def predict(text, model, tokenizer):
     '''
