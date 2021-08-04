@@ -6,7 +6,6 @@ import pandas as pd
 import json
 import torch
 from transformers import BertTokenizer, BertForTokenClassification, logging
-import spacy
 logging.set_verbosity_error()
 
 from predict import predict
@@ -17,17 +16,14 @@ if TYPE_CHECKING:
     from transformers.models.bert.modeling_bert import BertForTokenClassification
 
 def main():
-    nlp = spacy.load("de_core_news_lg")
-
-    prefixes = ['\\n', ] + nlp.Defaults.prefixes
-    prefix_regex = spacy.util.compile_prefix_regex(prefixes)
-    nlp.tokenizer.prefix_search = prefix_regex.search
-
     with open(os.path.join(sys.path[0], "idx2tag.json"), "r") as json_file:
         idx2tag_str = json.load(json_file)
 
     tag2idx = {idx2tag_str[key]: int(key) for key in idx2tag_str.keys()}
     idx2tag = {int(key): idx2tag_str[key] for key in idx2tag_str.keys()}
+
+    with open(os.path.join(sys.path[0], "character_map.json"), "r") as json_file:
+        charachter_map = json.load(json_file)
 
     device: 'torch.device' = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -40,7 +36,7 @@ def main():
 
     while True:
         text = input('Write down your text: ')
-        tokens, labels = predict(text, model, tokenizer, device, idx2tag)
+        tokens, labels = predict(text, model, tokenizer, device, idx2tag, charachter_map)
         for token, label in zip(tokens, labels):
             print("{}\t\t\t{}".format(label, token))
 

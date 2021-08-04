@@ -12,6 +12,7 @@ def predict(text: 'str',
             tokenizer: 'BertTokenizer', 
             device: 'torch.device', 
             idx2tag: 'dict', 
+            character_map: 'dict',
             include_null_tags: 'bool' = False) -> Union['list', 'list']:
     '''
     Function for token classification.
@@ -22,12 +23,20 @@ def predict(text: 'str',
         device, torch.device - device to use for predicting
         idx2tag, dict - dictionary to transform predicted indices to tags
         include_null_tags, bool - either to include tokens with tags 'O' or not
+        character_map, dict - dictionary with utf-8 codes for specific symbols
     
-    out: 
+    out: new_tokens, list - list of tokens from the text
+         new_labels, list - list of new labels for each token from the text
     '''
+    for key, value in character_map.items():
+        text = text.replace(key, value)
+        text = text.replace(key.lower(), value)
 
     sentence = tokenizer.encode(text, add_special_tokens = False)
-    sentence = torch.tensor([sentence]).to(device)
+    if len(sentence[:512]) < len(sentence):
+        print("The text was not fully analyzed because of its volume. Please, divide it to smaller pieces.")
+    
+    sentence = torch.tensor([sentence[:512]]).to(device)
 
     with torch.no_grad():
         output: 'TokenClassifierOutput' = model(sentence)
