@@ -66,7 +66,7 @@ You can find all steps in data analysis and modeling at [analysis/Hawk.ipynb](ht
 
 ### Data preprocessing steps:
 1. [Large German Pipeline (de_core_news_lg)](https://spacy.io/models/de) is used for tagging texts.
-2. '\\n' is added to prefixes to be correctly analyzed in documents by the model.
+2. All special symbols (including umlauts) are preprocessed.
 3. DataFrmae is transformed to two lists with get_sents_and_tags function (sentences and tags). The first list contains texts divided to sentences, second list consists of tags for each word in the sentence.
 4. tag2idx and idx2tag dictionaries are created once and used after training. They connect each tag to number, which will be predicted in the future. idx2tag.json is used in [src/predict.py](https://github.com/ReAlex1902/Hawk/blob/main/src/predict.py) to transform predicted number to tag.
 5. With Bert Tokenizer text is tokenized with labels to each piece of the word using BILUO method.
@@ -97,24 +97,22 @@ Prerequisites are described in [src/requirements.txt](https://github.com/ReAlex1
 ```sh
 git clone https://github.com/ReAlex1902/Hawk.git
 ```
-3. Download all necessary libraries with the next command:
+2. Go to Hawk repository and download all necessary libraries with the next command:
   ```sh
-  pip install -r requirements.txt
+  cd Hawk
+  python -m pip install -r src\requirements.txt
   ```
-2. Download German spaCy large pipeline:
-  ```sh
-  python -m spacy download de_core_news_lg
-  ```
+3. Download HAWK model:
+```sh
+gdown --id 1_IWXvjsV3uU0D93loeVUuK_miA24dt8b --output src\HAWK_3.0.pth
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Download files from [src](https://github.com/ReAlex1902/Hawk/tree/main/src) catalog. You will need [requirements.txt](https://github.com/ReAlex1902/Hawk/blob/main/src/requirements.txt) to download, [idf2tag.json](https://github.com/ReAlex1902/Hawk/blob/main/src/idx2tag.json) for accurate predictions and main.py to be applied on the document.
-2. Download [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-3. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
-4. When [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) asks you, provide the path to [Hawk weights](https://drive.google.com/file/d/1_IWXvjsV3uU0D93loeVUuK_miA24dt8b/view?usp=sharing).
-5. Write down the text of the document.
-6. Enjoy the result!
+1. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
+2. Write down the text of the document.
+3. Enjoy the result!
 
 
 ## Metrics
