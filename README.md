@@ -110,7 +110,7 @@ gdown --id 1_IWXvjsV3uU0D93loeVUuK_miA24dt8b --output src\HAWK_3.0.pth
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
+1. Run [src/main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
 2. Write down the text of the document. example_document.txt is provided.
 3. Enjoy the result!
 
