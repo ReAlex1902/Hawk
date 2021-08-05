@@ -78,7 +78,7 @@ You can find all steps in data analysis and modeling at [analysis/Hawk.ipynb](ht
 2. train_model() function trains the model and return the history of loss function values. Here I used AdamW optimizer. eval_model() runs the model on the validation dataset and returns accuracy score, f1 score and classification report.
 3. predict() prints the given sentence and highlights important information. The function in [src/predict.py] is modified for everyday usage.
 
-<img src="photos/sentence-example.png" width="407" height="636">
+<img src="photos/sentence-example.png" width="614" height="169">
 
 
 
@@ -102,7 +102,7 @@ git clone https://github.com/ReAlex1902/Hawk.git
   cd Hawk
   python -m pip install -r src\requirements.txt
   ```
-3. Download HAWK model:
+3. Download HAWK model (434 MB):
 ```sh
 gdown --id 1_IWXvjsV3uU0D93loeVUuK_miA24dt8b --output src\HAWK_3.0.pth
 ```
@@ -110,8 +110,8 @@ gdown --id 1_IWXvjsV3uU0D93loeVUuK_miA24dt8b --output src\HAWK_3.0.pth
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Run [main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
-2. Write down the text of the document.
+1. Run [src/main.py](https://github.com/ReAlex1902/Hawk/blob/main/src/main.py) script.
+2. Write down the text of the document. example_document.txt is provided.
 3. Enjoy the result!
 
 
