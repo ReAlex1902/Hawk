@@ -102,7 +102,7 @@ git clone https://github.com/ReAlex1902/Hawk.git
   cd Hawk
   python -m pip install -r src\requirements.txt
   ```
-3. Download HAWK model:
+3. Download HAWK model (434 MB):
 ```sh
 gdown --id 1_IWXvjsV3uU0D93loeVUuK_miA24dt8b --output src\HAWK_3.0.pth
 ```
