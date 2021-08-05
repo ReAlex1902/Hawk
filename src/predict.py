@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Union
+from typing import TYPE_CHECKING, Dict, Tuple, List
 import torch
 import numpy as np
 
@@ -7,13 +7,13 @@ if TYPE_CHECKING:
     from transformers.models.bert.modeling_bert import BertForTokenClassification
     from transformers.models.bert.tokenization_bert import BertTokenizer
 
-def predict(text: 'str', 
+def predict(text: str, 
             model: 'BertForTokenClassification', 
             tokenizer: 'BertTokenizer', 
             device: 'torch.device', 
-            idx2tag: 'dict', 
-            character_map: 'dict',
-            include_null_tags: 'bool' = False) -> Union['list', 'list']:
+            idx2tag: Dict, 
+            character_map: Dict,
+            include_null_tags: bool = False) -> Tuple[List, List]:
     '''
     Function for token classification.
 
@@ -34,7 +34,8 @@ def predict(text: 'str',
 
     sentence = tokenizer.encode(text, add_special_tokens = False)
     if len(sentence[:512]) < len(sentence):
-        print("The text was not fully analyzed because of its volume. Please, divide it to smaller pieces.")
+        print("The text was not fully analyzed because of its volume. \
+               Please, divide it to smaller pieces.")
     
     sentence = torch.tensor([sentence[:512]]).to(device)
 
@@ -49,15 +50,21 @@ def predict(text: 'str',
     prev_label = ''
     for token, label_idx in zip(tokens, tags[0]):
         current_label = idx2tag[label_idx]
-        if include_null_tags == True or (include_null_tags == False and current_label != 'O'):
-            if token.startswith("##") and len(new_tokens) > 0:
-                new_tokens[-1] += token[2:]
-            elif prev_label == current_label[2:]:
-                prev_label = current_label[2:]
-                new_tokens[-1] += ' ' + token
-            else:
-                prev_label = current_label[2:]
-                new_tags.append(current_label[2:])
-                new_tokens.append(token)
+
+        if not (
+            include_null_tags
+            or (not include_null_tags and current_label != 'O')
+        ):
+            continue
+
+        if token.startswith("##") and len(new_tokens) > 0:
+            new_tokens[-1] += token[2:]
+        elif prev_label == current_label[2:]:
+            prev_label = current_label[2:]
+            new_tokens[-1] += ' ' + token
+        else:
+            prev_label = current_label[2:]
+            new_tags.append(current_label[2:])
+            new_tokens.append(token)
 
     return new_tokens, new_tags

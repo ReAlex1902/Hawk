@@ -6,16 +6,17 @@ import pandas as pd
 import json
 import torch
 from transformers import BertTokenizer, BertForTokenClassification, logging
-logging.set_verbosity_error()
 
 from predict import predict
-from typing import TYPE_CHECKING, Union
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from transformers.models.bert.tokenization_bert import BertTokenizer
     from transformers.models.bert.modeling_bert import BertForTokenClassification
 
 def main():
+    logging.set_verbosity_error()
+    
     with open(os.path.join(sys.path[0], "idx2tag.json"), "r") as json_file:
         idx2tag_str = json.load(json_file)
 
@@ -25,7 +26,7 @@ def main():
     with open(os.path.join(sys.path[0], "character_map.json"), "r") as json_file:
         charachter_map = json.load(json_file)
 
-    device: 'torch.device' = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device: torch.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     tokenizer: 'BertTokenizer' = BertTokenizer.from_pretrained('bert-base-german-cased', do_lower_case = False)
     model: 'BertForTokenClassification' = BertForTokenClassification.from_pretrained('bert-base-german-cased', num_labels = len(tag2idx))
