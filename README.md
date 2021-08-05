@@ -76,7 +76,7 @@ You can find all steps in data analysis and modeling at [analysis/Hawk.ipynb](ht
 ### Modeling steps:
 1. I used [BertForTokenClassification bert-base-german-cased](https://huggingface.co/bert-base-german-cased) pretrained model.
 2. train_model() function trains the model and return the history of loss function values. Here I used AdamW optimizer. eval_model() runs the model on the validation dataset and returns accuracy score, f1 score and classification report.
-3. predict() prints the given sentence and highlights important information. The function in [src/predict.py] is modified for everyday usage.
+3. predict() prints the given sentence and highlights important information. The function in [src/predict.py](https://github.com/ReAlex1902/Hawk/blob/main/src/predict.py) is modified for everyday usage.
 
 <img src="photos/sentence-example.png" width="614" height="169">
 
