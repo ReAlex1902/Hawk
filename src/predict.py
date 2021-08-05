@@ -14,7 +14,7 @@ def predict(text: str,
             idx2tag: Dict, 
             character_map: Dict,
             include_null_tags: bool = False) -> Tuple[List, List]:
-    '''
+    """
     Function for token classification.
 
     in: text, str - text to use for token classification
@@ -27,7 +27,7 @@ def predict(text: str,
     
     out: new_tokens, list - list of tokens from the text
          new_labels, list - list of new labels for each token from the text
-    '''
+    """
     for key, value in character_map.items():
         text = text.replace(key, value)
         text = text.replace(key.lower(), value)
@@ -42,7 +42,7 @@ def predict(text: str,
     with torch.no_grad():
         output: 'TokenClassifierOutput' = model(sentence)
     
-    logits: 'torch.Tensor' = output[0]
+    logits: torch.Tensor = output[0]
     tags = np.argmax(logits.to('cpu').numpy(), axis = 2)
 
     tokens = tokenizer.convert_ids_to_tokens(sentence.to('cpu').numpy()[0])
