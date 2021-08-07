@@ -59,7 +59,7 @@ def predict(text: str,
 
         if token.startswith("##") and len(new_tokens) > 0:
             new_tokens[-1] += token[2:]
-        elif prev_label == current_label[2:]:
+        elif prev_label == current_label[2:] and len(new_tokens) > 0:
             prev_label = current_label[2:]
             new_tokens[-1] += ' ' + token
         else:

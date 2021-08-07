@@ -39,7 +39,8 @@ def main():
         text = input('Write down your text: ')
         tokens, labels = predict(text, model, tokenizer, device, idx2tag, charachter_map)
         for token, label in zip(tokens, labels):
-            print("{}\t\t\t{}".format(label, token))
+            # print("{}\t\t\t{}".format(label, token))
+            print('{0:25}  {1}'.format(label, token))
 
 if __name__ == '__main__':
     main()
