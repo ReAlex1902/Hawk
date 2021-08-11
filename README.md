@@ -67,7 +67,7 @@ You can find all steps in data analysis and modeling at [analysis/Hawk_modeling.
 ### Data preprocessing steps:
 1. [Large German Pipeline (de_core_news_lg)](https://spacy.io/models/de) is used for tagging texts.
 2. All special symbols (including umlauts) are preprocessed.
-3. DataFrmae is transformed to two lists with get_sents_and_tags function (sentences and tags). The first list contains texts divided to sentences, second list consists of tags for each word in the sentence.
+3. DataFrame is transformed to two lists with get_sents_and_tags function (sentences and tags). The first list contains texts divided to sentences, second list consists of tags for each word in the sentence.
 4. tag2idx and idx2tag dictionaries are created once and used after training. They connect each tag to number, which will be predicted in the future. idx2tag.json is used in [src/predict.py](https://github.com/ReAlex1902/Hawk/blob/main/src/predict.py) to transform predicted number to tag.
 5. With Bert Tokenizer text is tokenized with labels to each piece of the word using BILUO method.
 6. Texts with labels are padded to a maximum length of 512 tokens.
