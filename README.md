@@ -62,7 +62,7 @@ Hawk was created using the following technologies:
 
 
 ## Analysis
-You can find all steps in data analysis and modeling at [analysis/Hawk.ipynb](https://github.com/ReAlex1902/Hawk/blob/main/analysis/Hawk.ipynb)
+You can find all steps in data analysis and modeling at [analysis/Hawk_modeling.ipynb](https://github.com/ReAlex1902/Hawk/blob/main/analysis/Hawk_modeling.ipynb)
 
 ### Data preprocessing steps:
 1. [Large German Pipeline (de_core_news_lg)](https://spacy.io/models/de) is used for tagging texts.
